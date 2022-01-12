@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import NewTodo from './Form/NewTodo';
 
-function App() {
+const DUMMY_TODOS = [{
+    id: 1,
+    todo: 'Fare la spesa'
+  },
+  {
+    id: 2,
+    todo: 'Studiare'
+  }
+];
+
+const App = () => {
+
+  const [todos, setTodos] = useState(DUMMY_TODOS);
+
+  const addTodoHandler = (todo) => {
+    setTodos((prevTodos) => {
+      return [todos, ...prevTodos];
+    })
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>To Do List</h1>
+      <NewTodo onAddTodo={ addTodoHandler } />
     </div>
   );
 }
