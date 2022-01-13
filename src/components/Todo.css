@@ -1,0 +1,24 @@
+.todo {
+    background-color: lightgray;
+    border-radius: 5px;
+    text-align: left;
+    font-style: italic;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.todo > p {
+    padding: 10px;
+    margin: 0;
+}
+
+.square {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    border-radius: 5px;
+    margin-right: 10px;
+}
